@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📝 Teste VOZ - Desenvolvedor Back-End
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📄 Descrição
 
-## About Laravel
+Bem-vindo ao teste de contratação para a vaga de Desenvolvedor Back-End. Neste teste, você terá a oportunidade de demonstrar suas habilidades em **PHP** com o framework **Laravel** e **PostgreSQL** ao criar uma API CRUD baseada em um conjunto de requisitos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 Instruções
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. **Clone** este repositório para o seu ambiente local.
+2. Crie uma aplicação backend utilizando **Laravel**, seguindo as especificações fornecidas.
+3. Implemente as funcionalidades de **Criar**, **Ler**, **Atualizar** e **Deletar** para as entidades especificadas.
+4. Configure a aplicação para utilizar o banco de dados **PostgreSQL**.
+5. Utilize **Postman** para testar e documentar as suas APIs.
+6. Após completar o teste, crie um repositório no seu GitHub com o nome **`teste-voz-backEnd`** e suba o seu código para lá.
+7. Envie o link do seu repositório para nós (dev@vozeduca.com.br).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📚 Requisitos
 
-## Learning Laravel
+- Utilize **Laravel** para construir a aplicação.
+- Utilize **PostgreSQL** como banco de dados.
+- Implemente as operações de CRUD (Criar, Ler, Atualizar, Deletar) para duas entidades: "Produtos" e "Categorias".
+- Certifique-se de que a API esteja bem documentada utilizando o **Postman**.
+- A aplicação deve seguir boas práticas de desenvolvimento, incluindo a utilização de migrations, seeders, controllers, models e rotas organizadas.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Funcionalidades
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+A aplicação deve incluir as seguintes operações CRUD para as entidades "Produtos" e "Categorias":
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Produtos
 
-## Laravel Sponsors
+1. **Criar Produto:**
+   - Rota: `POST /api/produtos`
+   - Payload: `{ "nome": "Nome do Produto", "descricao": "Descrição do Produto", "preco": 100.00, "categoria_id": 1 }`
+   
+2. **Ler Produtos:**
+   - Rota: `GET /api/produtos`
+   - Retorna uma lista de todos os produtos.
+   
+3. **Ler Produto por ID:**
+   - Rota: `GET /api/produtos/{id}`
+   - Retorna os detalhes de um produto específico.
+   
+4. **Atualizar Produto:**
+   - Rota: `PUT /api/produtos/{id}`
+   - Payload: `{ "nome": "Nome do Produto", "descricao": "Descrição do Produto", "preco": 150.00, "categoria_id": 2 }`
+   
+5. **Deletar Produto:**
+   - Rota: `DELETE /api/produtos/{id}`
+   - Deleta um produto específico.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Categorias
 
-### Premium Partners
+1. **Criar Categoria:**
+   - Rota: `POST /api/categorias`
+   - Payload: `{ "nome": "Nome da Categoria" }`
+   
+2. **Ler Categorias:**
+   - Rota: `GET /api/categorias`
+   - Retorna uma lista de todas as categorias.
+   
+3. **Ler Categoria por ID:**
+   - Rota: `GET /api/categorias/{id}`
+   - Retorna os detalhes de uma categoria específica.
+   
+4. **Atualizar Categoria:**
+   - Rota: `PUT /api/categorias/{id}`
+   - Payload: `{ "nome": "Nome da Categoria Atualizada" }`
+   
+5. **Deletar Categoria:**
+   - Rota: `DELETE /api/categorias/{id}`
+   - Deleta uma categoria específica.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Relacionamento Produto-Categoria
 
-## Contributing
+- Cada produto pertence a uma categoria (`categoria_id` como chave estrangeira na tabela `produtos`).
+- Cada categoria pode ter vários produtos.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## ⏰ Prazo
 
-## Code of Conduct
+Você tem até **17/01/2025 às 08:00 horas** para completar este teste a partir do momento em que o recebe. Será levado em consideração a qualidade e o tempo de entrega do teste.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📦 Entrega
 
-## Security Vulnerabilities
+1. Após completar o teste, crie um repositório no seu GitHub com o nome **`teste-voz-backEnd`**.
+2. Suba o código da aplicação para este repositório.
+3. Inclua qualquer documentação adicional que julgar necessária.
+4. Certifique-se de que o código está bem comentado e fácil de entender.
+5. Envie o link do repositório para nós (dev@vozeduca.com.br).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📞 Contato
 
-## License
+Se você tiver qualquer dúvida durante o teste, sinta-se à vontade para entrar em contato conosco.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Boa sorte! 🍀
+
+
