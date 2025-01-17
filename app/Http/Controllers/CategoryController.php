@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -25,9 +26,14 @@ class CategoryController extends Controller
 
     public function show(string $id)
     {
-        $category = Category::findOrFail($id);
-
-        return response()->json($category);
+        try {
+            $category = Category::findOrFail($id);
+            return response()->json($category);
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Category not found!',
+            ], 404);
+        }
     }
 
     public function update(Request $request, Category $category)

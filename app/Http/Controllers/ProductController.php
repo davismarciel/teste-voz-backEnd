@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -29,11 +30,15 @@ class ProductController extends Controller
 
     public function show(string $id)
     {
-        $product = Product::findOrFail($id);
-
-        return response()->json($product);
+        try {
+            $product = Product::findOrFail($id);
+            return response()->json($product);
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Product not found!',
+            ], 404);
+        }
     }
-
 
     public function update(Request $request, Product $product)
     {
