@@ -93,4 +93,52 @@ Se você tiver qualquer dúvida durante o teste, sinta-se à vontade para entrar
 
 Boa sorte! 🍀
 
+[DOCUMENTAÇÃO COMPLETA COM POSTMAN](https://documenter.getpostman.com/view/38719087/2sAYQZJsgE)
 
+Clone o projeto
+
+```bash
+  git clone https://github.com/davismarciel/teste-voz-backEnd.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd teste-voz-backEnd
+```
+
+Crie o Arquivo .env
+
+```bash
+  cp .env.example .env
+```
+
+Suba os containers do projeto
+
+```bash
+  docker compose up --build -d
+```
+
+Atualize as dependências do projeto no seu ambiente local com o comando:
+
+```bash
+composer update
+```
+
+Rode as migrations com os seeders para popular o banco de dados
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Para rodar a API
+
+```bash
+php artisan serve
+```
+
+Acesse para testar:
+
+```bash
+  http://localhost:8000/api/products
+```
